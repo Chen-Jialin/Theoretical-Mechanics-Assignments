@@ -1,0 +1,279 @@
+%Theoretical Mechanics Homework_1
+\documentclass[10pt,a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{extarrows}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multirow}
+\title{理论力学作业\_1}
+\author{陈稼霖 \and 45875852}
+\date{2018.9.25}
+\theoremstyle{remark}
+\newtheorem{defi}{Definition}
+\newtheorem{cdefi}{\bf 定义}
+\begin{document}
+\maketitle
+\section*{Q1}
+\subsection*{（1）}解：
+设电子的质量为$m$，$t$时刻的坐标为$(x(t),y(t),z(t))$，速度为$(v_x(t),v_y(t),v_z(t))$。电子在$x,y,z$轴方向的运动微分方程分别为
+\begin{align}
+&m\frac{d^2x}{{dt}^2} = eB\frac{dy}{dt}\label{1.1MotionDifferentialEquationx}\\
+&m\frac{d^2y}{{dt}^2} = e(E - B\frac{dx}{dt})\label{1.1MotionDifferentialEquationy}\\
+&m\frac{d^2z}{{dt}^2} = 0\label{1.1MotionDifferentialEquationz}
+\end{align}
+考虑电子在$z$轴方向上的初始条件$z(0) = 0,v_z(0) = 0$，式(\ref{1.1MotionDifferentialEquationz}) 解得
+\begin{align*}
+&v(t) = 0\\
+&z(t) = 0
+\end{align*}
+式(\ref{1.1MotionDifferentialEquationx})和(\ref{1.1MotionDifferentialEquationy}) 联立
+\begin{align*}
+&m\frac{dv_x}{dt} = eBv_y\\
+&m\frac{dv_y}{dt} = e(E - Bv_x)
+\end{align*}
+考虑电子在$x,y$轴方向上的初始条件$v_x(0) = V,\frac{dv_x}{dt}(0) = 0,v_y(0) = 0,\frac{dv_y}{dt}(0) = \frac{eE}{m}$，解得
+\begin{align*}
+&v_x(t) = (V - \frac{E}{B})\cos(\frac{eB}{m}t) + \frac{E}{B}\\
+&v_y(t) = (\frac{E}{B} - V)\sin(\frac{eB}{m}t)
+\end{align*}
+以上两式对时间$t$积分，并考虑初始条件$x(0) = 0,y(0) = 0$，得
+\begin{align*}
+&x(t) = \frac{m}{eB}(V - \frac{E}{B})\sin(\frac{eB}{m}t) + \frac{E}{B}t\\
+&y(t) = \frac{m}{eB}(V - \frac{E}{B})[\cos(\frac{eB}{m}t) - 1]
+\end{align*}
+综上，电子的速度随时间变化的情况为
+\[
+\left\{\begin{array}{l}
+v_x(t) = (V - \frac{E}{B})\cos(\frac{eB}{m}t) + \frac{E}{B}\\
+v_y(t) = (\frac{E}{B} - V)\sin(\frac{eB}{m}t)\\
+v_z(t) = 0
+\end{array}\right.
+\]
+电子的坐标随时间的变化的情况为
+\[
+\left\{\begin{array}{l}
+x = \frac{m}{eB}(V - \frac{E}{B})\sin(\frac{eB}{m}t) + \frac{E}{B}t\\
+y = \frac{m}{eB}(V - \frac{E}{B})[\cos(\frac{eB}{m}t) - 1]\\
+z = 0
+\end{array}\right.
+\]
+\subsection*{（2）}证：
+当$\textbf{B} = 0$时，电子在$x,y,z$轴方向的运动微分方程分别为
+\begin{align*}
+&m\frac{d^2x}{{dt}^2} = 0\\
+&m\frac{d^2y}{{dt}^2} = eE\\
+&m\frac{d^2z}{{dt}^2} = 0
+\end{align*}
+考虑初始条件$x(0) = 0,\frac{dx}{dt}(0) = V,y(0) = 0,\frac{dy}{dt}(0) = 0,z(0) = 0,\frac{dz}{dt}(0) = 0$，解得
+\begin{align*}
+&x(t) = Vt\\
+&y(t) = \frac{eE}{2m}t^2\\
+&z(t) = 0
+\end{align*}
+以上三式联立，消去时间$t$，解得电子运动的轨道方程为
+\[
+\left\{\begin{array}{l}
+y = \frac{eE}{2mV^2}x^2\\
+z = 0
+\end{array}\right.
+\]
+故电子轨道为在竖直平面（$xy$平面）的抛物线。
+\subsection*{（3）}证：
+将$\textbf{E} = 0$代入（1）中解得的电子的坐标随时间变化的三个方程中，得
+\[
+\left\{\begin{array}{l}
+x = \frac{mV}{eB}\sin(\frac{eB}{m}t)\\
+y = \frac{mV}{eB}[\cos(\frac{eB}{m}t) - 1]\\
+z = 0
+\end{array}\right.
+\]
+联立上面三式，消去时间$t$，得到电子运动的轨道方程为
+\[
+\left\{\begin{array}{l}
+x^2 + (y + \frac{mV}{eB})^2 = (\frac{mV}{eB})^2\\
+z = 0
+\end{array}\right.
+\]
+故电子轨道为半径为$\frac{mV}{eB}$的圆。
+\section*{Q2}
+\subsection*{(i)}解：
+设系统启动瞬时小虫相对于通过盘心$O$的水平轴的转动速率（角速度的大小）为$\omega_0$。盘的转动惯量通过积分得到
+\[
+I = \int_0^rx^2\cdot\frac{m}{\pi r^2}\cdot2\pi xdx = \frac{1}{2}mr^2
+\]
+在启动过程中系统未受到外力矩作用，根据角动量守恒定理，有
+\[
+I\Omega_0 - \frac{m}{10}r^2\omega_0 = 0
+\]
+根据相对运动关系，有
+\[
+r(\Omega_0 + \omega_0) = u
+\]
+以上三式联立解得系统启动瞬时圆盘和小虫的转动速率（角速度的大小）分别为
+\[
+\left\{\begin{array}{l}
+\Omega_0 = \frac{u}{6r}\\
+\omega_0 = \frac{5u}{6r}
+\end{array}\right.
+\]
+\subsection*{(ii)}解：
+设圆盘的角速度大小为$\Omega(t)$，小虫的角速度大小为$\omega(t)$。小虫爬行过程中，系统的角动量受到小虫所受重力力矩的作用，根据角动量定理，有
+\[
+\frac{d}{dt}(I\Omega - \frac{m}{10}r^2\omega) = \frac{m}{10}gr\sin\theta
+\]
+其中
+\[
+\theta = \int_0^t\omega dt
+\]
+再根据相对运动关系，有
+\[
+r(\Omega + \omega) = u
+\]
+以上三式联立，得到$OA$ 与铅垂线之间的夹角$\theta$应满足的二阶微分方程为
+\[
+\frac{d^2\theta}{{dt}^2} = -\frac{g}{6r}\sin\theta
+\]
+更进一步，可化为
+\begin{align*}
+&\frac{d^2\theta}{{dt}^2} = \frac{d\omega}{dt} = \frac{d\theta}{dt}\frac{d\omega}{d\theta} = \omega\frac{d\omega}{d\theta} = -\frac{g}{6r}\sin\theta\\
+&\Longrightarrow\omega d\omega = -\frac{g}{6r}\sin\theta d\theta
+\end{align*}
+两边同对$\theta$积分，并考虑初始条件当$t = 0$时，$\theta = 0,\omega(0) = \frac{5u}{6r}$，解得
+\[
+\omega = \sqrt{\frac{g}{3r}(\cos\theta - 1) + (\frac{5u}{6r})^2}
+\]
+即$OA$ 与铅垂线之间的夹角$\theta$应满足的一阶微分方程为
+\[
+\frac{d\theta}{dt} = \sqrt{\frac{g}{3r}(\cos\theta - 1) + (\frac{5u}{6r})^2}
+\]
+\subsection*{(iii)}解：
+对圆盘使用角动量定理，有
+\[
+\frac{dI\Omega}{dt} = F_Nr
+\]
+代入(ii)中得到的二阶微分方程
+\[
+\frac{d^2\theta}{{dt}^2} = -\frac{g}{6r}\sin\theta
+\]
+和相对运动关系
+\[
+r(\Omega + \omega) = u
+\]
+解得
+\[
+F_N = \frac{mg}{12}\sin\theta
+\]
+\subsection*{(iv)}解：
+在竖直方向上使用动量定理，有
+\begin{align*}
+&F_{Ry} - mg - \frac{mg}{10} = \frac{m}{10}\frac{d(r\omega)}{dt}\sin\theta\\
+&\Longrightarrow F_{Ry} = \frac{mg(66 - \sin^2\theta)}{60}
+\end{align*}
+在水平方向上使用动量定理，有
+\[
+F_{Rx} = \frac{m}{10}\frac{d(r\omega)}{dt}\cos\theta = -\frac{mg\sin\theta\cos\theta}{60}
+\]
+综上，圆盘轴对圆盘作用的力$\textbf{F}_N$的大小为
+\begin{align*}
+F_N &= \sqrt{F_{Nx}^2 + F_{Ny}^2} = \frac{mg\sqrt{(66 - \sin^2\theta)^2 + (\sin\theta\cos\theta)^2}}{60}\\
+&= \frac{mg\sqrt{262\cos2\theta + 17162}}{120}
+\end{align*}
+圆盘轴对圆盘作用的力$\textbf{F}_N$的方向斜向上与竖直方向成角度$\arctan\frac{|F_{Nx}|}{|F_{Ny}|} = \arctan\frac{\sin2\theta}{131 + \cos2\theta}$ （夹在小虫的加速度$(\frac{d\bm{\omega}}{dt}\times\overrightarrow{OA})$ 和竖直向上的方向之间）
+\section*{Q3}解：
+设球形雨滴的质量为$m(t)$，初始质量为$m_0$，质量的增加率为每单位时间每单位面积$\lambda$，半径为$r(t)$，表面积为$S(t)$，密度为$\rho$，速度为$v(t)$，下落的高度为$h(t)$，下落时周围水蒸汽的初始速度为$0$。 球形雨滴的动力学方程为
+\[
+\frac{d}{dt}(mv) = mg
+\]
+球形雨滴质量为
+\[
+m = \rho\cdot\frac{4}{3}\pi r^3 = m_0 + \int_0^t\lambda Sdt
+\]
+球形雨滴表面积为
+\[
+S = 4\pi r^2
+\]
+以上二式联立，并考虑初始条件$r(0) = \sqrt[3]{\frac{3m_0}{4\pi\rho}},m(0) = m_0$ 解得
+\begin{align*}
+&r(t) = \frac{\lambda}{\rho}t + \sqrt[3]{\frac{3m_0}{4\pi\rho}}\\
+&m(t) = \frac{4\pi\rho}{3}(\frac{\lambda}{\rho}t + \sqrt[3]{\frac{3m_0}{4\pi\rho}})^3
+\end{align*}
+将其代入动力学方程，并考虑初始条件$v(0) = 0$，解得
+\[
+v(t) = \frac{g}{4A}[(At + B) - B^4(At + B)^{-3}]
+\]
+其中$A = \frac{\lambda}{\rho},B = \sqrt[3]{\frac{3m_0}{4\pi\rho}}$。 两边同对时间$t$积分，并考虑初始情况$h(0) = 0$，解得球形雨滴下落高度随时间变化的关系为
+\[
+h(t) = \frac{g}{8A^2}[(At + B)^2 + B^4(At + B)^{-2}]
+\]
+\section*{Q4}解：
+设物体$A$和$B$质量均为$m$。两根劲度系数均为$k$的弹簧并联，故其总的劲度系数为
+\[
+K = \frac{k\Delta x + k\Delta x}{\Delta x} = 2k
+\]
+在初始平衡状态下，弹簧压缩的长度为
+\[
+x_1 = \frac{mg}{2k}
+\]
+给物体$A$以冲量$I$后，根据动量定理，物体$A$的动量变为$I$，此时物体$A$的动能为
+\[
+E_k = \frac{I^2}{2m}
+\]
+考虑使$B$跳起来的临界条件：物体$A$反弹至最高点时，底面对于$B$ 的支持力恰好为$0$，此时弹簧伸长的长度为
+\[
+x_2 = \frac{mg}{2k}
+\]
+当物体A达到最高点时，动能变为$0$。根据系统机械能守恒，有
+\[
+E_k + \frac{1}{2}kx_1^2 = mg(x_1 + x_2) + \frac{1}{2}kx_2^2
+\]
+联立以上各式，有
+\[
+I = \sqrt{\frac{2m^3g^2}{k}}
+\]
+故$I$需要大于阈值$\sqrt{\frac{2m^3g^2}{k}}$，才可以使$B$跳起来。
+\section*{Q5}
+\subsection*{（1）}证明：
+由质点运动的双扭线轨迹方程$r^2 = a^2\cos2\theta$得
+\begin{align*}
+&u = \frac{1}{r} = \frac{1}{a\sqrt{\cos2\theta}}\\
+&\Longrightarrow\frac{du}{d\theta} = \frac{1}{a}\frac{\sin2\theta}{\cos^{\frac{3}{2}}2\theta}\\
+&\Longrightarrow\frac{d^2u}{{d\theta}^2} = \frac{1}{a}(2\cos^{-\frac{1}{2}}2\theta + 3\sin^22\theta\cos^{-\frac{5}{2}}2\theta)
+\end{align*}
+代入Binet公式可得
+\begin{align*}
+F &= -mh^2\frac{1}{a^2\cos2\theta}[\frac{1}{a}(2\cos^{-\frac{1}{2}}2\theta + 3\sin^22\theta\cos^{-\frac{5}{2}}2\theta) + \frac{1}{a\sqrt{\cos2\theta}}]\\
+&= -\frac{3mh^2}{a^3\cos^{\frac{3}{2}}2\theta}(1 + \tan^22\theta) = -\frac{3mh^2}{a^3\cos^{\frac{7}{2}}2\theta}\\
+&= -\frac{3mh^2}{a^3(\frac{r^2}{a^2})^{\frac{7}{2}}} = -h^2\frac{3ma^4}{r^7}
+\end{align*}
+\subsection*{（2）}证明：
+位力定理的公式为
+\[
+\overline{T} = -\frac{1}{2}\overline{\sum_{i = 1}^{n}\textbf{F}_i\cdot\textbf{r}_i}
+\]
+左边$\overline{T}$为质点组动能对时间的平均值，右边为均位力积。
+
+假设行星绕太阳做椭圆周运动且视太阳为静止，设行星质量为$m$，相对于太阳的位矢为$\textbf{r}(t)$ 速度为$\textbf{v}(t)$，运动周期为$\tau$，太阳质量为$M$。行星的平均动能为
+\begin{align*}
+\mbox{左边} &= \overline{T} = \frac{1}{\tau}\int_0^{\tau}\frac{1}{2}mv^2dt = \frac{m}{2\tau}\int_0^{\tau}\textbf{v}\cdot\textbf{v}dt = \frac{m}{2\tau}\int_0^{\tau}\textbf{v}\cdot d\textbf{r}\\
+&= \frac{m}{2\tau}[\int_0^{\tau}d(\textbf{v}\cdot\textbf{r}) - \int_0^{\tau}\textbf{r}\cdot d\textbf{v}] = \frac{m}{2\tau}[(\textbf{v}\cdot\textbf{r})|_0^{\tau} - \int_0^{\tau}\textbf{r}\cdot d\textbf{v}]\\
+&= -\frac{m}{2\tau}\int_0^{\tau}\textbf{r}\cdot d\textbf{v}
+\end{align*}
+行星的动力学方程为
+\begin{align*}
+&m\frac{d\textbf{v}}{dt} = -\frac{GMm}{r^2}\frac{\textbf{r}}{r}\\
+&\Longrightarrow d\textbf{v} = -\frac{GM}{r^2}\frac{\textbf{r}}{r}dt
+\end{align*}
+代入可得平均动能的表达式中可得
+\begin{align*}
+\mbox{左边} &= -\frac{m}{2\tau}\int_0^{\tau}\textbf{r}\cdot d\textbf{v} = \frac{m}{2\tau}\int_0^{\tau}\textbf{r}\cdot\frac{GM}{r^2}\frac{\textbf{r}}{r}dt = \frac{m}{2\tau}\int_0^{\tau}\frac{GM}{r}dt\\
+&= \frac{GMm}{2}\overline{(r^{-1})}
+\end{align*}
+再来计算右边的均位力积
+\[
+\mbox{右边} = -\frac{1}{2}\overline{\sum_{i = 1}^{n}\textbf{F}_i\cdot\textbf{r}_i} = -\frac{1}{2}\overline{[\frac{GMm}{r^2}\frac{\textbf{r}}{r}\cdot\textbf{0} + (-\frac{GMm}{r^2}\frac{\textbf{r}}{r})\cdot\textbf{r}]} = \frac{GMm}{2}\overline{(r^{-1})}
+\]
+左边$=$右边，即对于行星绕太阳的运动，$\overline{T} = -\frac{1}{2}\overline{\sum_{i = 1}^{n}\textbf{F}_i\cdot\textbf{r}_i}$，位力定理成立。
+\end{document}

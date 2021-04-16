@@ -1,0 +1,214 @@
+%Theoretical Mechanics Homework_5
+\documentclass[10pt,a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\title{理论力学作业\_5}
+\author{陈稼霖 \and 45875852}
+\date{2018.12.5}
+\begin{document}
+\maketitle
+\section*{Q1}解：
+大圆盘在桌面上运动，属于刚体的平面平行运动，有$3$个自由度，小圆盘圆心固定在大圆盘上转动，有$1$个自由度，整个系统有$s=4$个自由度。取广义坐标：大圆盘的横纵坐标$x,y$，大圆盘圆心与小圆盘圆心连线与$x$轴的夹角$\theta$，小圆盘转过的角度$\varphi$。 设桌面为零势能平面，则系统的重力势能为$0$，系统的拉格朗日函数即为系统的动能
+\begin{align*}
+L=&\frac{1}{2}M(\dot{x}^2+\dot{y}^2)+\frac{1}{2}(\frac{1}{2}MR^2)\dot{\theta}^2+\frac{1}{2}m[(\dot{x}-b\dot{\theta}\sin\theta)^2+(\dot{y}+b\dot{\theta}\cos\theta)^2]\\
+&+\frac{1}{2}(\frac{1}{2}mr^2)\dot{\varphi}^2
+\end{align*}
+由于无外力做功，系统动能守恒（或者由上式中不显含时间$\frac{\partial L}{\partial t}=0$也可以看出），上式为一守恒量。
+\begin{align*}
+L=&\frac{1}{2}M(\dot{x}^2+\dot{y}^2)+\frac{1}{2}(\frac{1}{2}MR^2)\dot{\theta}^2+\frac{1}{2}m[(\dot{x}-b\dot{\theta}\sin\theta)^2+(\dot{y}+b\dot{\theta}\cos\theta)^2]\\
+&+\frac{1}{2}(\frac{1}{2}mr^2)\dot{\varphi}^2=C_1
+\end{align*}
+其中常数$C_1$由初始条件决定。
+
+\noindent 拉格朗日函数不显含坐标$x,y,\varphi$，故有广义动量守恒
+\begin{align*}
+&\frac{\partial L}{\partial x}=0\Longrightarrow p_x=\frac{\partial L}{\partial\dot{x}}=M\dot{x}+m(\dot{x}-b\dot{\theta}\sin\theta)=C_2\\
+&\frac{\partial L}{\partial y}=0\Longrightarrow p_{y}=\frac{\partial L}{\partial\dot{y}}=M\dot{y}+m(\dot{y}+b\dot{\theta}\cos\theta)=C_3\\
+&\frac{\partial L}{\partial\varphi}=0\Longrightarrow p_{\varphi}=\frac{\partial L}{\partial\dot{\varphi}}=\frac{1}{2}mr^2\dot{\varphi}=C_4
+\end{align*}
+以上三式分别代表整个系统$x$方向动量守恒，$y$方向动量守恒，小圆盘绕自身质心的角动量守恒，其中常数$C_2,C_3,C_4$由初始条件决定。
+\section*{Q2}解：
+系统自由度$s=1$，如题目图中取杆与竖直方向的夹角$\theta$为广义坐标。取$O$ 点处重力势能为零。小球转动的角速度$\omega=\frac{l\dot{\theta}}{r}$，杆绕$O$ 点的转动惯量$I=\frac{1}{12}m(3l)^2+m(\frac{l}{2})^2=ml^2$。系统的拉格朗日函数为
+\begin{align*}
+L=&\frac{1}{2}m(l\dot{\theta})^2+\frac{1}{2}(\frac{1}{2}mr^2)(\frac{l\dot{\theta}}{r})^2+\frac{1}{2}(ml^2)\dot{\theta}^2\\
+&-mgl\cos\theta+\frac{1}{2}mgl\cos\theta-\frac{1}{2}k(l\sin\theta)^2\\
+=&\frac{5}{4}ml^2\dot{\theta}^2-\frac{1}{2}mgl\cos\theta-\frac{1}{2}kl^2\sin^2\theta
+\end{align*}
+拉格朗日方程为
+\begin{align*}
+&\frac{d}{dt}\frac{\partial L}{\partial\dot{\theta}}-\frac{\partial L}{\partial\theta}=0\\
+\Longrightarrow&\frac{5}{2}ml^2\ddot{\theta}-\frac{1}{2}mgl\sin\theta+kl^2\sin\theta\cos\theta=0\\
+&\because\text{小震动}, \therefore \sin\theta\approx\theta, \cos\theta\approx1\\
+\Longrightarrow&\ddot{\theta}-\frac{mg-2kl}{5ml}\theta=0
+\end{align*}
+此即系统的运动微分方程。系统的振动周期为
+\[
+T=2\pi\sqrt{\frac{5ml}{2kl-mg}}
+\]
+\section*{Q3.}解：
+系统自由度为$s=2$，如题目图中取$OC$连线与竖直方向夹角$\theta_1$ 和$Cm$和竖直方向夹角$\theta_2$为广义坐标。以$O$点为零重力势能点。均质环绕$O$ 点的转动惯量为$I=MR^2+MR^2=2MR^2$。系统的拉格朗日函数为
+\begin{align*}
+L=&\frac{1}{2}(2MR^2)\dot{\theta_1}^2+\frac{1}{2}m[(R\dot{\theta_1}\cos\theta_1+R\dot{\theta_2}\cos\theta_2)^2+(R\dot{\theta_1}\sin\theta_1+R\dot{\theta_2}\sin\theta_2)^2]\\
+&+MgR\cos\theta_1+mg(R\cos\theta_1+R\cos\theta_2)\\
+=&MR^2\dot{\theta_1}^2+\frac{1}{2}mR^2[\dot{\theta_1}^2+\dot{\theta_2}^2+2\dot{\theta}_1\dot{\theta}_2\cos(\theta_2-\theta_1)]\\
+&+MgR\cos\theta_1+mgR(\cos\theta_1+\cos\theta_2)
+\end{align*}
+代入拉格朗日方程得到
+\begin{align*}
+&\left\{\begin{array}{llll}
+2MR^2\ddot{\theta}_1+mR^2\{\ddot{\theta}_1+\ddot{\theta}_2\cos(\theta_2-\theta_1)+\dot{\theta}_2[\sin(\theta_2-\theta_1)\dot{\theta}_2-\sin(\theta_2-\theta_1)\dot{\theta}_1]\}\\
+~~~~-mR^2\dot{\theta}_1\dot{\theta}_2\sin(\theta_2-\theta_1)+MgR\sin\theta_1+mgR\sin\theta_1=0\\
+mR^2\{\ddot{\theta}_2+\ddot{\theta}_1\cos(\theta_2-\theta_1)+\dot{\theta}_1[\sin(\theta_2-\theta_1)\dot{\theta}_2-\sin(\theta_2-\theta_1)\dot{\theta}_1]\}\\
+~~~~+mR^2\dot{\theta}_1\dot{\theta}_2\sin(\theta_2-\theta_1)+mgR\sin\theta_2=0\\
+\end{array}\right.\\
+&\because\text{小振动}, \therefore \cos(\theta_2-\theta_1)\approx1, \sin(\theta_2-\theta_1)\approx0, \sin\theta_1\approx\theta_1, \sin\theta_2\approx\theta_2\\
+&\left\{\begin{array}{ll}
+(2M+m)R\ddot{\theta}_1+mR\ddot{\theta}_2+(M+m)g\theta_1=0\\
+R(\ddot{\theta}_2+\ddot{\theta}_1)+g\theta_2=0\\
+\end{array}\right.
+\end{align*}
+令上方程组特解为
+\begin{align*}
+&\theta_1=A_1\sin(\omega t+\alpha)\\
+&\theta_2=A_2\sin(\omega t+\alpha)
+\end{align*}
+代入方程组中得到
+\begin{align*}
+&[-(2M+m)R\omega^2+(M+m)g]A_1-mR\omega^2A_2=0\\
+&-R\omega^2A_1+(-R\omega^2+g)A_2=0
+\end{align*}
+解得
+\begin{align*}
+&\omega_1^2=\frac{(M+m)g}{MR}\\
+&\omega_2^2=\frac{g}{2R}
+\end{align*}
+回代入方程组得到
+\begin{align*}
+&\frac{A_2^{(1)}}{A_1^{(1)}}=-\frac{M+m}{m}\\
+&\frac{A_2^{(2)}}{A_1^{(2)}}=1
+\end{align*}
+得到小振动通解
+\begin{align*}
+&\theta_1=A_1^{(1)}\sin(\sqrt{\frac{(M+m)g}{MR}}t+\alpha_1)+A_1^{(2)}\sin(\sqrt{\frac{g}{2R}}t+\alpha_2)\\
+&\theta_2=-\frac{M+m}{m}A_1^{(1)}\sin(\sqrt{\frac{(M+m)g}{MR}}t+\alpha_1)+A_1^{(2)}\sin(\sqrt{\frac{g}{2R}}t+\alpha_2)
+\end{align*}
+\section*{Q4、}解：
+系统自由度$s=2$，但含有一个非完整约束，取$C$点的横纵坐标$x,y$和杆$AB$ 与$y$ 轴的夹角$\theta$为广义坐标。设$A,B$ 两点坐标分别为$(x_1,y_1),(x_2,y_2)$，$A,B$两点坐标可表示为
+\begin{align*}
+&x_1=x-\frac{l}{2}\cos\theta\\
+&y_1=y-\frac{l}{2}\sin\theta\\
+&x_2=x+\frac{l}{2}\cos\theta\\
+&y_2=y+\frac{l}{2}\sin\theta
+\end{align*}
+系统的拉格朗日函数为
+\begin{align*}
+L=&\frac{1}{2}m(\dot{x}_1^2+\dot{y}_1^2)+\frac{1}{2}m(\dot{x}_2^2+\dot{y}_2^2)-mg(y_1+y_2)\\
+=&\frac{1}{2}m[(\dot{x}+\frac{l}{2}\dot{\theta}\sin\theta)^2+(\dot{y}-\frac{l}{2}\dot{\theta}\cos\theta)^2]\\
+&+\frac{1}{2}m[(\dot{x}-\frac{l}{2}\dot{\theta}\sin\theta)^2+(\dot{y}+\frac{l}{2}\dot{\theta}\cos\theta)^2]-mg(y_1+y_2)\\
+=&m[\dot{x}^2+\dot{y}^2+\frac{l^2}{4}\dot{\theta}^2-2gy]
+\end{align*}
+杆的中点$C$的速度只能沿着$AB$杆的方向，不完整约束为
+\begin{align*}
+&\dot{y}=\cos\theta\dot{x}\\
+\Longrightarrow&\sin\theta\delta x=0, -\cos\theta\delta y=0
+\end{align*}
+设拉格朗日不定乘子为$\lambda$，非完整体系的拉格朗日方程：
+\begin{align*}
+&\left\{\begin{array}{lll}
+\frac{d}{dt}\frac{\partial L}{\partial\dot{x}}-\frac{\partial L}{\partial x}=0\\
+\frac{d}{dt}\frac{\partial L}{\partial\dot{y}}-\frac{\partial L}{\partial y}=0\\
+\frac{d}{dt}\frac{\partial L}{\partial\dot{\theta}}-\frac{\partial L}{\partial\theta}=0\\
+\end{array}\right.\\
+\Longrightarrow&\left\{\begin{array}{lll}
+2m\ddot{x}-\lambda\sin\theta=0\\
+2m\ddot{y}+2mg+\lambda\cos\theta=0\\
+\frac{ml^2}{2}\ddot{\theta}=0\\
+\end{array}\right.\\
+\end{align*}
+上面最后一式解得
+\[
+\theta=\alpha t+\beta
+\]
+其中$\alpha$为初始时刻杆转动的角速度，$\beta$为初始时刻杆与$y$ 轴所成夹角。上面前两式得
+\begin{equation}
+\label{equ1}
+\ddot{x}=-(\ddot{y}+g)\tan\theta
+\end{equation}
+$x,y$的一、二阶导数可以表示为
+\begin{align*}
+&\dot{x}=\frac{dx}{d\theta}\frac{d\theta}{dt}=\alpha\frac{dx}{d\theta}\\
+&\ddot{x}=\frac{d\dot{x}}{d\theta}\frac{d\theta}{dt}=\alpha^2\frac{d^2x}{d\theta^2}\\
+&\dot{y}=\alpha\frac{dy}{d\theta}\\
+&\ddot{y}=\alpha^2\frac{d^2y}{d\theta^2}
+\end{align*}
+联立非完整约束条件和式(\ref{equ1})解得
+\begin{align*}
+&\sin\theta\frac{dx}{d\theta}-\cos\theta\frac{dy}{d\theta}=0\\
+&\alpha^2\frac{d^2x}{d\theta^2}=-(\alpha^2\frac{d^2y}{d\theta^2}+g)\tan\theta
+\end{align*}
+以上两式联立得到
+\[
+\frac{d^y}{d\theta^2}-\cot\theta\frac{dy}{d\theta}+\frac{g}{\alpha^2}\sin^2\theta=0
+\]
+解得
+\[
+y=-\frac{\gamma}{\alpha}\cos\theta-\frac{g}{2\alpha^2}\cos^2\theta+\delta
+\]
+\[
+x=\frac{\gamma}{\alpha}\sin\theta+\frac{g}{2\alpha^2}(\sin\theta\cos\theta+\theta)+\varepsilon
+\]
+其中$\gamma,\delta,\varepsilon$皆为积分常数。
+质点$A,B$的运动方程为
+\begin{align*}
+&x_1=\frac{\gamma}{\alpha}\sin\theta+\frac{g}{2\alpha^2}(\sin\theta\cos\theta+\theta)-\frac{l}{2}\cos\theta+\varepsilon\\
+&y_1=-\frac{\gamma}{\alpha}\cos\theta-\frac{g}{2\alpha^2}\cos^2\theta-\frac{l}{2}\sin\theta+\delta\\
+&x_2=\frac{\gamma}{\alpha}\sin\theta+\frac{g}{2\alpha^2}(\sin\theta\cos\theta+\theta)+\frac{l}{2}\cos\theta+\varepsilon\\
+&y_1=-\frac{\gamma}{\alpha}\cos\theta-\frac{g}{2\alpha^2}\cos^2\theta+\frac{l}{2}\sin\theta+\delta
+\end{align*}
+其中$\theta=\alpha t+\beta$
+\section*{Q5、}解：
+系统自由度$s=1$，取小环的横坐标$x$为广义坐标。小环沿着抛物线形金属丝滑动，设约束方程为
+\[
+y=\frac{x^2}{4a}
+\]
+则
+\[
+\dot{y}=\frac{x}{2a}\dot{x}
+\]
+系统动能为
+\begin{align*}
+T=&\frac{1}{2}m(\dot{x}^2+\dot{y}^2+\omega^2x^2)\\
+=&\frac{1}{2}m[(1+\frac{x^2}{4a^2})\dot{x}^2+\omega^2x^2]\\
+=&T_2+T_0
+\end{align*}
+其中$T_2=\frac{1}{2}m(1+\frac{x^2}{4a^2})\dot{x}^2, T_0=\frac{1}{2}m\omega^2x^2$。设$y=0$处重力势能为零，系统势能为
+\[
+V=mgy=\frac{mgx^2}{4a}
+\]
+系统的拉格朗日函数为
+\[
+L=T-V=\frac{1}{2}m[(1+\frac{x^2}{4a^2})\dot{x}^2+\omega^2x^2-\frac{gx^2}{2a}]
+\]
+势能$V$中不显含时间$t$，系统的广义能量积分为
+\[
+H=T_2-T_0+V=\frac{1}{2}m[(1+\frac{x^2}{4a^2})\dot{x}^2-\omega^2x^2+\frac{gx^2}{2a}]
+\]
+广义动量为
+\[
+p_x=\frac{\partial L}{\partial\dot{x}}=m(1+\frac{x^2}{4a^2})\dot{x}
+\]
+代入哈密顿函数中替换$\dot{x}$得
+\[
+H=\frac{p_x^2}{2m(1+\frac{x^2}{4a^2})}-\frac{1}{2}m[\omega^2x^2-\frac{gx^2}{2a}]
+\]
+正则方程：
+\begin{align*}
+&\dot{p}_x=-\frac{\partial H}{\partial x}\\
+\Longrightarrow&m(1+\frac{x^2}{4a^2})\ddot{x}+m\frac{x}{2a^2}\dot{x}^2=m\frac{x}{4a}\dot{x}^2+m(\omega^2-\frac{g}{2a})x\\
+\Longrightarrow&(1+\frac{x^2}{4a^2})\ddot{x}+\frac{x}{4a^2}\dot{x}^2-(\omega^2-\frac{g}{2a})x=0
+\end{align*}
+此即小环在$x$方向的运动微分方程。
+\end{document}

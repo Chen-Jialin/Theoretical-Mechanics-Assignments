@@ -1,0 +1,152 @@
+%Theoretical Mechanics Homework_7
+\documentclass[10pt,a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\title{理论力学作业\_7}
+\author{陈稼霖 \and 45875852}
+\date{2019.1.5}
+\begin{document}
+\maketitle
+\section*{1、}解：
+设有心力$F=-\frac{mk}{r^2}$。保守系统，自由度$s=2$，取极坐标系中的$\theta,r$为广义坐标。在极坐标系中，系统的动能为
+\[
+T=\frac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2)
+\]
+势能为
+\[
+V=-\frac{mk}{r}
+\]
+系统的拉格朗日函数为
+\[
+L=T-V=\frac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2)+\frac{mk}{r}
+\]
+代入哈密顿作用量求极值
+\begin{align*}
+\delta S=&\delta\int_{t_1}^{t_2}Ldt=\int_{t_1}^{t_2}\delta[\frac{1}{2}m(\dot{r}^2+r^2\dot{\theta}^2)+\frac{mk}{r}]dt\\
+=&m\int_{t_1}^{t_2}[\dot{r}\delta\dot{r}+r\dot{\theta}^2\delta r+r^2\dot{\theta}\delta\dot{\theta}-\frac{k}{r^2}\delta r]dt\\
+=&m\int_{t_1}^{t_2}[\frac{d}{dt}(\dot{r}\delta r+r^2\dot{\theta}\delta\theta)+(-\ddot{r}+r\dot{\theta}^2-\frac{k}{r^2})\delta r-(2r\dot{\theta}+r^2\ddot{\theta})\delta\theta]dt\\
+=&m\int_{t_1}^{t_2}[(-\ddot{r}+r\dot{\theta}^2-\frac{k}{r^2})\delta r-(2\dot{r}\dot{\theta}+r\ddot{\theta})r\delta\theta]dt\\
+=&0
+\end{align*}
+由于广义坐标$\theta,r$独立，得到质点的运动微分方程
+\begin{align*}
+&\ddot{r}-r\dot{\theta}^2+\frac{k}{r^2}=0\\
+&2\dot{r}\dot{\theta}+r\ddot{\theta}=0
+\end{align*}
+\section*{2、}证明：
+因为
+\begin{align*}
+\frac{df}{dt}=&[f,H]+\frac{\partial f}{\partial t}=\frac{\partial f}{\partial q_1}\frac{\partial H}{\partial p_1}-\frac{\partial f}{\partial p_1}\frac{\partial H}{\partial q_1}+\frac{\partial f}{\partial q_2}\frac{\partial H}{\partial p_2}-\frac{\partial f}{\partial p_2}\frac{\partial H}{\partial q_2}+\frac{\partial f}{\partial t}\\
+=&0-2p_1q_2+2q_2p_1-0+0\\
+=&0
+\end{align*}
+故$f$为初积分。
+
+因为
+\begin{align*}
+\frac{dg}{dt}=&[g,H]+\frac{\partial g}{\partial t}=\frac{\partial g}{\partial q_1}\frac{\partial H}{\partial p_1}-\frac{\partial g}{\partial p_1}\frac{\partial H}{\partial q_1}+\frac{\partial g}{\partial q_2}\frac{\partial H}{\partial p_2}-\frac{\partial g}{\partial p_2}\frac{\partial H}{\partial q_2}+\frac{\partial g}{\partial t}\\
+=&2q_1p_2-0+0-2p_2q_1+0\\
+=&0
+\end{align*}
+故$g$为初积分。
+\section*{3、}解：
+系统自由度$s=1$，取$\theta$为广义坐标。系统的动能为
+\[
+T=\frac{1}{2}m[(a\dot{\theta})^2+(\omega a\sin\theta)^2]=\frac{1}{2}ma^2(\dot{\theta}^2+\omega^2\sin^2\theta)
+\]
+势能为
+\[
+V=mga\cos\theta
+\]
+系统的拉格朗日方程为
+\[
+L=T-V=\frac{1}{2}ma^2(\dot{\theta}^2+\omega^2\sin^2\theta)-mga\cos\theta
+\]
+代入哈密顿作用量求极值
+\begin{align*}
+\delta S=&\delta\int_{t_1}^{t_2}Ldt=\int_{t_1}^{t_2}\delta[\frac{1}{2}ma^2(\dot{\theta}^2+\omega^2\sin^2\theta)-mga\cos\theta]dt\\
+=&m\int_{t_1}^{t_2}[a^2(\dot{\theta}\delta\dot{\theta}+\omega^2\sin\theta\cos\theta\delta\theta)+ga\sin\theta\delta\theta]dt\\
+=&m\int_{t_1}^{t_2}[a^2(\dot{\theta}\frac{d}{dt}\delta\theta+\omega^2\sin\theta\cos\theta\delta\theta)+ga\sin\theta\delta\theta]dt\\
+=&m\int_{t_1}^{t_2}[\frac{d}{dt}(a^2\dot{\theta}\delta\theta)+a^2(-\ddot{\theta}+\omega^2\sin\theta\cos\theta)\delta\theta+ga\sin\theta\delta\theta]dt\\
+=&m\int_{t_1}^{t_2}(-a^2\ddot{\theta}+a^2\omega^2\sin\theta\cos\theta+ga\sin\theta)\delta\theta dt\\
+=&0
+\end{align*}
+由于$\theta$是独立的广义坐标，得到小环的运动微分方程
+\[
+a\ddot{\theta}-a\omega^2\sin\theta\cos\theta-g\sin\theta=0
+\]
+\section*{4、}解：
+设两质点质量分别为$m_1,m_2$，两质点之间引力$F=-\frac{m_1m_2k}{r^2}$。 保守系统，系统自由度$s=2$，取两质点之间的距离$r$和两质点连线转过的角度$\theta$ 为广义坐标。两质点到系统质心的距离分别为$\frac{m_2}{m_1+m_2}r,\frac{m_1}{m_1+m_2}r$。系统的动能为
+\begin{align*}
+T=&\frac{1}{2}m_1[(\frac{m_2}{m_1+m_2}\dot{r})^2+(\frac{m_2}{m_1+m_2}r\dot{\theta})^2]\\
+&+\frac{1}{2}m_2[(\frac{m_1}{m_1+m_2}\dot{r})^2+(\frac{m_1}{m_1+m_2}r\dot{\theta})^2]\\
+=&\frac{1}{2}\frac{m_1m_2}{m_1+m_2}(\dot{r}^2+r^2\dot{\theta}^2)
+\end{align*}
+势能为
+\[
+V=-\frac{m_1m_2k}{r}
+\]
+系统的拉格朗日函数为
+\[
+L=T-V=\frac{1}{2}\frac{m_1m_2}{m_1+m_2}(\dot{r}^2+r^2\dot{\theta}^2)+\frac{m_1m_2k}{r}
+\]
+代入哈密顿作用量求极值
+\begin{align*}
+\delta S=&\delta\int_{t_1}^{t_2}Ldt=\int_{t_1}^{t_2}\delta[\frac{m_1m_2}{2(m_1+m_2)}(\dot{r}^2+r^2\dot{\theta}^2)+\frac{m_1m_2k}{r}]dt\\
+=&\int_{t_1}^{t_2}[\frac{m_1m_2}{m_1+m_2}(\dot{r}\delta\dot{r}+r\dot{\theta}^2\delta r+r^2\dot{\theta}\delta\dot{\theta})-\frac{m_1m_2k}{r^2}\delta r]dt\\
+=&\int_{t_1}^{t_2}[\frac{m_1m_2}{m_1+m_2}(\dot{r}\frac{d}{dt}\delta r+r\dot{\theta}^2\delta r+r^2\dot{\theta}\frac{d}{dt}\delta\theta)-\frac{m_1m_2k}{r^2}\delta r]dt\\
+=&\int_{t_1}^{t_2}[\frac{d}{dt}(\frac{m_1m_2}{m_1+m_2}(\dot{r}\delta r+r^2\dot{\theta}\delta\theta))+\frac{m_1m_2}{m_1+m_2}(-\ddot{r}\delta r+r\dot{\theta}^2\delta r-2r\dot{r}\dot{\theta}\delta\theta-r^2\ddot{\theta}\delta\theta)-\frac{m_1m_2k}{r^2}\delta r]dt\\
+=&\int_{t_1}^{t_2}[(-\frac{m_1m_2}{m_1+m_2}\ddot{r}+\frac{m_1m_2}{m_1+m_2}r\dot{\theta}^2-\frac{m_1m_2k}{r^2})\delta r+\frac{m_1m_2}{m_1+m_2}(-2r\dot{r}\dot{\theta}-r^2\ddot{\theta})\delta\theta]dt\\
+=&0
+\end{align*}
+由于广义坐标$r,\theta$独立，故得到运动微分方程
+\begin{align*}
+&(\ddot{r}-r\dot{\theta}^2)+\frac{(m_1+m_2)k}{r^2}=0\\
+&2\dot{r}\dot{\theta}+r\ddot{\theta}=0
+\end{align*}
+\section*{5、}解：
+系统的拉格朗日函数为
+\[
+L=T-V=\frac{1}{2}m\dot{q}^2-mgq
+\]
+旧的广义动量为
+\[
+p=\frac{\partial H}{\partial\dot{q}}=m\dot{q}
+\]
+从而旧的广义速度可表示为
+\[
+\dot{q}=\frac{p}{m}
+\]
+哈密顿函数为
+\begin{align*}
+H=&p\dot{q}-L=\frac{1}{2}m\dot{q}^2+mgq\\
+=&\frac{p^2}{2m}+mgq
+\end{align*}
+由母函数得到
+\begin{align*}
+&p=\frac{\partial U}{\partial q}=mgQ\\
+&P=-\frac{\partial U}{\partial Q}=-\frac{1}{2}mg^2Q^2-mgq\Longrightarrow q=-\frac{P}{mg}-\frac{1}{2}gQ^2\\
+&\frac{\partial U}{\partial t}=0\Longrightarrow H^*=H
+\end{align*}
+以上三式代入原广义坐标下的哈密顿函数得到新的哈密顿函数
+\begin{align*}
+H^*=H=&\frac{p^2}{2m}+mgq\\
+=-P
+\end{align*}
+新哈密顿函数的正则方程为
+\begin{align*}
+&\dot{Q}=\frac{\partial H}{\partial P}=-1\Longrightarrow Q=-t+C_1\\
+&\dot{P}=-\frac{\partial H}{\partial Q}\Longrightarrow P=C_2
+\end{align*}
+考虑初始条件当$t=0$时，$q=0,\dot{q}=v_0$
+\[
+C_1=\frac{v_0}{g}, C_2=-\frac{1}{2}mv_0^2
+\]
+从而竖直上抛物体的运动规律：
+\[
+q=-\frac{P}{mg}-\frac{1}{2}gQ^2=v_0t-\frac{1}{2}gt^2
+\]
+\end{document}

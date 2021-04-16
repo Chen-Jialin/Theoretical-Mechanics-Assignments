@@ -1,0 +1,274 @@
+%Theoretical Mechanics Homework_6
+\documentclass[10pt,a4paper]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\title{理论力学作业\_6}
+\author{陈稼霖 \and 45875852}
+\date{2018.12.29}
+\begin{document}
+\maketitle
+\section*{Q1}
+\subsection*{（a）}解：
+系统自由度$s=2$，取质点$Mm$连线与竖直方向的夹角$\theta$和质点$M$在水平方向的坐标$x$为广义坐标。系统动能为
+\begin{align*}
+T=&\frac{1}{2}M\dot{x}^2+\frac{1}{2}m[(\dot{x}+b\dot{\theta}\cos\theta)^2+ (b\dot{\theta}\sin\theta)^2]\\
+=&\frac{1}{2}[mb^2\dot{\theta}^2+2mb\dot{\theta}\dot{x}\cos\theta+(M+m)\dot{x}^2]
+\end{align*}
+设质点$m$达到最低点时系统势能为零，则系统势能为
+\[
+V=mgb(1-\cos\theta)
+\]
+系统的拉格朗日函数为
+\[
+L=T-V=\frac{1}{2}[mb^2\dot{\theta}^2+2mb\dot{\theta}\dot{x}\cos\theta+(M+m)\dot{x}^2]-mgb(1-\cos\theta)
+\]
+\subsection*{（b）}解：
+在小角度近似的情况下，拉格朗日函数可近似写为
+\[
+L=\frac{1}{2}[mb^2\dot{\theta}^2+2mb\dot{\theta}\dot{x}+(M+m)\dot{x}^2]-\frac{1}{2}mgb\theta^2
+\]
+简正坐标是原广义坐标的线性组合，设简正坐标
+\[
+\left\{\begin{array}{ll}
+q_1=\theta+\alpha x\\
+q_2=\theta+\beta x\\
+\end{array}\right.
+\]
+则原广义坐标可写为
+\begin{equation}
+\label{Q1}
+\left\{\begin{array}{ll}
+\theta=\frac{\alpha q_2-\beta q_1}{\alpha-\beta}\\
+x=\frac{q_1-q_2}{\alpha-\beta}
+\end{array}\right.
+\end{equation}
+且有
+\begin{equation}
+\label{Q2}
+\left\{\begin{array}{ll}
+\dot{\theta}=\frac{\alpha\dot{q}_2-\beta\dot{q}_1}{\alpha-\beta}\\
+\dot{x}=\frac{\dot{q}_1-\dot{q}_2}{\alpha-\beta}
+\end{array}\right.
+\end{equation}
+转换为简正坐标后$T,V$式中将不再有$\dot{q}_1\dot{q_2},q_1q_2$交叉项，即将式(\ref{Q1})和(\ref{Q2})代入$V,T$式中，上述交叉项的系数为零
+\begin{align*}
+&-2mb^2\frac{\alpha\beta}{(\alpha-\beta)^2}+2mb\frac{\alpha+\beta}{(\alpha-\beta)^2}-\frac{2(M+m)}{(\alpha-\beta)^2}=0\\
+&mgb\frac{\alpha\beta}{(\alpha-\beta)^2}=0
+\end{align*}
+解得
+\begin{align*}
+&\alpha=\frac{M+m}{mb}\\
+&\beta=0
+\end{align*}
+从而简正坐标为
+\begin{equation}
+\label{Q3}
+\left\{\begin{array}{ll}
+q_1=\theta+\frac{M+m}{mb}x\\
+q_2=\theta
+\end{array}\right.
+\end{equation}
+
+说明：我们发现简正坐标$q_2$就是质点$Mm$连线与竖直方向的夹角$\theta$，也可以看成质点$m$相对于系统质心转过的角位移；而若取简正坐标$q_2$的导数，则有$\dot{q_2}=\dot{\theta}+\frac{M+m}{mb}\dot{x}$，这是质点$m$相对于系统质心的角速度与质点$M$相对于系统质心的角速度之和，因此简正坐标$q_1$是质点$m$相对于系统质心转过的角位移与质点$M$相对于系统质心转过的角位移之和。
+\subsection*{（c）}解：
+由式(\ref{Q3})有
+\begin{equation}
+\label{Q4}
+\left\{\begin{array}{ll}
+\theta=q_2\\
+x=\frac{mb}{M+m}(q_1-q_2)
+\end{array}\right.
+\end{equation}
+及
+\begin{equation}
+\label{Q5}
+\left\{\begin{array}{ll}
+\dot{\theta}=\dot{q}_2\\
+\dot{x}=\frac{mb}{M+m}(\dot{q}_1-\dot{q}_2)
+\end{array}\right.
+\end{equation}
+将式(\ref{Q4})和(\ref{Q5})代入原拉格朗日函数中得
+\[
+L=\frac{1}{2}[\frac{m^2b^2}{M+m}\dot{q}_1^2+\frac{Mmb^2}{M+m}\dot{q}_2^2]-\frac{1}{2}mgbq_2^2
+\]
+拉格朗日方程
+\begin{align*}
+&\left\{\begin{array}{ll}
+\frac{d}{dt}\frac{\partial L}{\partial\dot{q}_1}-\frac{\partial L}{\partial q_1}=0\\
+\frac{d}{dt}\frac{\partial L}{\partial\dot{q}_2}-\frac{\partial L}{\partial q_2}=0\\
+\end{array}\right.\\
+&\left\{\begin{array}{ll}
+\ddot{q}_1=0\\
+\ddot{q}_2+\frac{(M+m)g}{M}q_2=0\\
+\end{array}\right.\\
+\end{align*}
+解得简正坐标作为时间函数的表达式为
+\[
+\left\{\begin{array}{ll}
+q_1=At+B\\
+q_2=C\cos(\sqrt{\frac{(M+m)g}{Mb}}t)+D\sin(\sqrt{\frac{(M+m)g}{Mb}}t)
+\end{array}\right.
+\]
+其中积分常数$A,B,C,D$由初始条件决定。
+\section*{Q2}
+\subsection*{（1）}解：
+\begin{align*}
+\frac{\partial L}{\partial\dot{x}}=&me^{\alpha t}\dot{x}\\
+\frac{d}{dt}\frac{\partial L}{\partial\dot{x}}=&me^{\alpha t}(\alpha\dot{x}+\ddot{x})\\
+\frac{\partial L}{\partial x}=&-me^{\alpha t}\omega^2x
+\end{align*}
+拉格朗日方程：
+\begin{align*}
+&\frac{d}{dt}\frac{\partial L}{\partial\dot{x}}-\frac{\partial L}{\partial x}=0\\
+\Longrightarrow&\ddot{x}+\alpha\dot{x}+\omega^2x=0
+\end{align*}
+\subsection*{（2）}解：
+广义动量为
+\[
+p_x=\frac{\partial L}{\partial\dot{x}}=\frac{1}{2}me^{\alpha t}\dot{x}
+\]
+从而广义速度可以表示为
+\[
+\dot{x}=\frac{p_x}{m}e^{-\alpha t}
+\]
+系统的哈密顿函数为
+\[
+H=p_x\dot{x}-L=\frac{p_x^2}{2m}e^{-\alpha t}+\frac{m}{2}e^{\alpha t}\omega^2x^2
+\]
+利用哈密顿正则方程得到运动微分方程
+\begin{align*}
+&\frac{\partial H}{\partial x}=-\dot{p}_x\\
+\Longrightarrow&\ddot{x}+\alpha\dot{x}+\omega^2x=0
+\end{align*}
+\section*{Q3}解：
+系统自由度$s=1$，取质点$P$与盘心$C$连线与竖直方向的夹角为广义坐标。盘心平动速度为
+\[
+v_C=R\dot{\theta}
+\]
+质心$P$的速度为
+\begin{align*}
+\bm{v}=&-v_C\bm{i}+\bm{\dot{\theta}}\times\bm{R}\\
+=&-v_C\bm{i}+R\dot{\theta}(\bm{i}\cos\theta+\bm{j}\sin\theta)\\
+=&R\dot{\theta}[\bm{i}(\cos\theta-1)+\bm{j}\sin\theta]
+\end{align*}
+系统动能为
+\begin{align*}
+T=&\frac{1}{2}Mv_C^2+\frac{1}{2}(\frac{1}{2}MR^2)\dot{\theta}^2+\frac{1}{2}mv^2\\
+=&\frac{1}{2}[\frac{3}{2}M+2m(1-\cos\theta)]R^2\dot{\theta}^2
+\end{align*}
+设盘心$C$处为零势能点，则系统势能为
+\[
+V=-mgR\cos\theta
+\]
+系统的拉格朗日函数为
+\[
+L=T-V=\frac{1}{2}[\frac{3}{2}M+2m(1-\cos\theta)]R^2\dot{\theta}^2+mgR\cos\theta
+\]
+广义动量为
+\[
+p_{\theta}=\frac{\partial L}{\partial\dot{\theta}}=[\frac{3}{2}M+2m(1-\cos\theta)]R^2\dot{\theta}
+\]
+从而广义速度可表示为
+\[
+\dot{\theta}=\frac{p_{\theta}}{[\frac{3}{2}M+2m(1-\cos\theta)]R^2}
+\]
+系统的哈密顿函数为
+\begin{align*}
+H=&p_{\theta}\dot{\theta}-L\\
+=&\frac{p_{\theta}^2}{2[\frac{3}{2}M+2m(1-\cos\theta)]R^2}-mgR\cos\theta
+\end{align*}
+正则方程为
+\begin{align*}
+\dot{\theta}=&\frac{\partial H}{\partial p_{\theta}}=\frac{p_{\theta}}{[\frac{3}{2}M+2m(1-\cos\theta)]R^2}\\
+\dot{p}_{\theta}=&-\frac{\partial H}{\partial\theta}=\frac{p_{\theta}^2m\sin\theta}{[\frac{3}{2}M+2m(1-\cos\theta)]^2R^2}-mgR\sin\theta
+\end{align*}
+\section*{Q4}
+\subsection*{（i）}解：
+以$OC$所在的直线为$x'$轴，垂直$OC$的直线为$y'$，建立非惯性坐标系。小环$M$受到圆环的支持力垂直于其切线方向。小环受到惯性力大小为
+\[
+F_t=m\omega^2\dot2a\cos\frac{\theta}{2}
+\]
+方向为由$O$点指向$M$点，因此惯性力在切线方向上的分量大小为
+\[
+-F_t\sin\theta\frac{\theta}{2}=-2ma\omega^2\cos\frac{\theta}{2}\sin\frac{\theta}{2}
+\]
+小环受到科里奥利力也垂直于其切线方向。在非惯性参考系中，小环沿切线方向的加速度大小为$a\ddot{\theta}$。从而小环沿切线方向的运动微分方程为
+\begin{align*}
+&ma\ddot{\theta}=-F_t\sin\theta\frac{\theta}{2}=-2ma\omega^2\cos\frac{\theta}{2}\sin\frac{\theta}{2}\\
+\Longrightarrow&\ddot{\theta}+\omega^2\sin\theta=0
+\end{align*}
+\subsection*{（ii）}解：
+系统自由度$s=1$，取$CM$连线和$OC$连线夹角$\theta$为广义坐标。设$\overline{OM}=r,\angle xOM=\varphi$ 小环的动能为
+\begin{align*}
+T=&\frac{1}{2}(\dot{r}^2+r^2\dot{\varphi}^2)=\frac{1}{2}\{[\frac{d}{dt}(2a\cos\frac{\theta}{2})]^2+(2a\cos\frac{\theta}{2})^2[\frac{d}{dt}(\omega t+\frac{\theta}{2})]^2\}\\
+=&\frac{1}{2}m(4a^2\omega^2\cos^2\frac{\theta}{2}+4a^2\omega\dot{\theta}\cos^2\frac{\theta}{2}+a^2\dot{\theta}^2)
+\end{align*}
+故有
+\begin{align*}
+\frac{\partial T}{\partial\dot{\theta}}=&ma^2\dot{\theta}+2ma^2\omega\cos^2\frac{\theta}{2}\\
+\frac{d}{dt}\frac{\partial T}{\partial\dot{\theta}}=&ma^2\ddot{\theta}-ma^2\omega\dot{\theta}\sin\theta\\
+\frac{\partial T}{\partial\theta}=&-ma^2\omega^2\sin\theta-ma^2\omega\dot{\theta}\sin\theta
+\end{align*}
+虚功
+\begin{align*}
+\delta W=&F_N\widehat{\overrightarrow{MC}}\cdot\delta\overrightarrow{OM}\\
+=&F_N[-\bm{i}\cos(\omega t+\theta)-\bm{j}\sin(\omega t+\theta)]\cdot\\
+&\{\bm{i}\frac{\partial}{\partial\theta}a[\cos\omega t+\cos(\omega t+\theta)]+\bm{j}\frac{\partial}{\partial\theta}a[\sin\omega t+\sin(\omega t+\theta)]\}\delta\theta\\
+=&0\delta\theta
+\end{align*}
+故小环受到的广义力为$Q_{\theta}=0$。系统的拉格朗日方程为
+\begin{align*}
+&\frac{d}{dt}\frac{\partial T}{\partial\dot{\theta}}-\frac{\partial T}{\partial\theta}=Q_{\theta}\\
+\Longrightarrow&ma^2\ddot{\theta}-2ma^2\omega\dot{\theta}\sin\theta+ma^2\omega^2\sin\theta+2ma^2\omega\dot{\theta}\sin\theta=0\\
+\Longrightarrow&\ddot{\theta}+\omega^2\sin\theta=0
+\end{align*}
+\subsection*{（iii）}解：
+由于广义力$Q_{\theta}=0$，虚功$\delta W=0$，从而可以认为系统势能$V=0$，将系统的拉格朗日函数写为
+\[
+L=T=\frac{1}{2}m(4a^2\omega^2\cos^2\frac{\theta}{2}+4a^2\omega\dot{\theta}\cos^2\frac{\theta}{2}+a^2\dot{\theta}^2)
+\]
+广义动量为
+\[
+p_{\theta}=\frac{\partial L}{\partial\dot{\theta}}=ma^2\dot{\theta}+2ma^2\omega\cos^2\frac{\theta}{2}
+\]
+从而广义速度可以表示为
+\[
+\dot{\theta}=\frac{p_{\theta}}{ma^2}-2\omega\cos^2\frac{\theta}{2}
+\]
+系统的哈密顿函数为
+\begin{align*}
+H=&p_{\theta}\dot{\theta}-L\\
+=&\frac{1}{2}\frac{p_{\theta}^2}{ma^2}-2\omega p_{\theta}\cos^2\frac{\theta}{2}-2ma^2\omega^2\cos^2\frac{\theta}{2}
+\end{align*}
+系统的正则方程为
+\[
+\frac{\partial H}{\partial\theta}=-\dot{p}_{\theta}
+\]
+代入$H,p_{\theta}$式得
+\[
+\ddot{\theta}+\omega^2\sin\theta=0
+\]
+\section*{Q5}解：
+粒子自由度$s=3$，取其在转动参考系中的三个笛卡尔坐标$x,y,z$为广义坐标，从而广义速度为$\dot{x},\dot{y},\dot{z}$。设匀速转动参考系相对于惯性系的角速度为$\bm{\omega}$，粒子势能为$V$，在转动坐标系中矢径为$\bm{r}$，速度为$\bm{v}_r=(\dot{x},\dot{y},\dot{z})$，粒子在惯性系中的速度可表示为
+\begin{align*}
+&\bm{v}=\bm{v}_r+\bm{\omega}\times\bm{r}\\
+\Longrightarrow&\bm{v}_r=\bm{v}-\bm{\omega}\times\bm{r}
+\end{align*}
+粒子的动能为
+\[
+T=\frac{1}{2}mv^2=\frac{p^2}{2m}
+\]
+拉格朗日函数为
+\[
+L=T-V=\frac{p^2}{2m}-V
+\]
+哈密顿函数为
+\begin{align*}
+H=&p_x\dot{x}+p_y\dot{y}+p_z\dot{z}-L=p_x\dot{x}+p_y\dot{y}+p_z\dot{z}-\frac{p^2}{2m}+V\\
+=&\bm{p}\cdot\bm{v}_r-\frac{p^2}{2m}+V\\
+=&\frac{p^2}{2m}-\bm{p}\cdot(\bm{\omega}\times\bm{r})+V
+\end{align*}
+\end{document}
